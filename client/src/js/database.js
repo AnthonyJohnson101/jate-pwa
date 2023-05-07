@@ -21,15 +21,14 @@ export const putDb = async (content) => {
     const store = tx.objectStore("jate");
     const request = store.put({ content });
     const result = await request;
-    console.log('Data has been saved', result);
+    console.log("Data has been saved", result);
   } catch (error) {
-    console.error('PUT request failed:', error);
+    console.error("PUT request failed:", error);
   }
 };
 
 //gets all the content from the database
 export const getDb = async () => {
-  
   try {
     console.log("GET all data");
     const jateDb = await openDB("jate", 1);
@@ -40,7 +39,7 @@ export const getDb = async () => {
     console.log(result[0]);
     return result[0].jate;
   } catch (error) {
-    console.error('GET request failed:', error);
+    console.error("GET request failed:", error);
   }
 };
 
